@@ -1,0 +1,34 @@
+{
+  "dhis2": {
+    "url": "http://localhost:8080",
+    "username": "admin",
+    "password": "district"
+  },
+  "profiles": [
+    {
+      "name": "DHIS2 Sample data",
+      "url": "https://unicef.sdmxcloud.org/ws/public/sdmxapi/rest/data/UNICEF_TEST,DHIS_SAMPLE_DATASET,1.0/all?format=sdmx-json&includeHistory=true&includeMetadata=true&dimensionAtObservation=AllDimensions&includeAllAnnotations=true",
+      "transformation": [
+        {
+          "dataElementId": "UNICEF_INDICATOR",
+          "period": "TIME_PERIOD",
+          "organisationUnit": "COUNTRY",
+          "dataDimensions": [
+            {
+              "categoryOptionCombo": "OBS_VALUE",
+              "value": "VALUE"
+            },
+            {
+              "categoryOptionCombo": "LOWER_BOUND",
+              "value": "LOWER_BOUND"
+            },
+            {
+              "categoryOptionCombo": "UPPER_BOUND",
+              "value": "UPPER_BOUND"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

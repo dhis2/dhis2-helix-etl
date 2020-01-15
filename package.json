@@ -1,0 +1,15 @@
+{
+  "name": "dhis2-helix-etl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Stian Sandvold",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}

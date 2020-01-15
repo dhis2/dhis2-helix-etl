@@ -1,0 +1,6 @@
+{"message":"Hello world!","level":"info"}
+{"message":"Started DHIS2-Helix-ETL application","level":"info"}
+{"message":"Started DHIS2-Helix-ETL application","level":"info"}
+{"message":"Unable to load environment. Make sure you have a .env file in the root directory.","level":"error"}
+{"message":"Started DHIS2-Helix-ETL application","level":"info"}
+{"level":"info","message":"Message: "}
