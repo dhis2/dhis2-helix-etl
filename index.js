@@ -18,6 +18,8 @@ const config = require('./config.json');
         let dhiS2Connector = new DHIS2Connector(config.dhis2.url, config.dhis2.username, config.dhis2.password);
         let dataValues = [];
 
+        console.log("Processing profile: " + profile.name);
+
         helixConnector.getData((err, data) => {
 
             if (err) {
