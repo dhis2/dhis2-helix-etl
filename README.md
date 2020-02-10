@@ -4,7 +4,7 @@
 
 First set up `configuration.json` with required information, then run the script with Node:
 
-  node index.js
+    node index.js
 
 This script will load data from Helix, transform it based on the profile mapping and push data to the DHIS2 instance defined in the configuration.
 
