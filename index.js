@@ -56,7 +56,6 @@ const config = require('./config.json');
                 });
             }
             console.log("Mapped", Object.keys(dataSet).length, "records into", dataValues.length, "data values");
-            console.log(dataValues);
 
             dhiS2Connector.postDataValues({dataValues: dataValues}, function (err, res) {
                 if (err) {
