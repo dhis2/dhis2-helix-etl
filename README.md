@@ -2,7 +2,7 @@
 
 ## Configuration
 
-First set up `configuration.json` with required information, then run the script with Node:
+First set up `configuration.json` with the required information, then run the script with Node:
 
     node index.js
 
@@ -51,7 +51,7 @@ The `dhis2` section contains information about the instance where data should be
 
 The `profiles` section represents each set of data to import into DHIS 2. Each profile refers to a helix endpoint and a `transformation` for the data.
 
-The `transformation` consists of the key (`dataElementId`, `period`, `organisationUnit`) which relates directly to entities in DHIS 2, and a value. The value will be executed as javascript with variables based on the Helix payload. This means in our current example, we pick the certain properties that represents the diffent references to the entities in DHIS 2. We expect `dataElementId`, `organisationUnit` and `categoryOptionCombo` all refer to valid codes in DHIS 2. This is a property that can be configured for each entity in DHIS2.
+The `transformation` consists of the key (`dataElementId`, `period`, `organisationUnit`) which relates directly to entities in DHIS 2, and a value. The value will be executed as javascript with variables based on the Helix payload. This means in our current example, we pick the certain properties that represents the diffent references to the entities in DHIS 2. We expect `dataElementId`, `organisationUnit` and `categoryOptionCombo` all refer to valid codes in DHIS 2. This is a property that can be configured for each entity in DHIS 2.
 
 Each data dimension refer to each of the three values which are required (observed value, lower bound and upper bound) which are disaggregated into different category option combos. This means that each row of data from Helix will result in three DHIS 2 datavalues.
 
