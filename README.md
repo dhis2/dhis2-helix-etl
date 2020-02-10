@@ -55,4 +55,4 @@ The `transformation` consists of the key (`dataElementId`, `period`, `organisati
 
 Each data dimension refer to each of the three values which are required (observed value, lower bound and upper bound) which are disaggregated into different category option combos. This means that each row of data from Helix will result in three DHIS 2 datavalues.
 
-Additionally, the period must be in the correct format (if we are working solely with years, four digits is sufficient).
+Additionally, the period must be in the correct format. If we are working solely with years, four digits is sufficient.
