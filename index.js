@@ -34,25 +34,30 @@ const config = require('./config.json');
 
             console.log("Found " + Object.keys(dataSet).length + " records");
 
+            /*
+            * Key refers to the SDMX observation key. This key contains multiple indexes split by ":".
+            * The index position refers to the structure dimensions, and the index values refer to the
+            * position of the value within dimension. 
+            */
             for (let key in dataSet) {
 
-                let res = {};
+                let observation = {};
                 let dimensions = key.split(":");
 
                 for (let i = 0; i < dimensions.length; i++) {
                     let dimension = data.getDimension(i, dimensions[i]);
-                    res[dimension.id] = dimension.value;
+                    observation[dimension.id] = dimension.value;
                 }
 
                 for (let i = 0; i < dataSet[key].length - 1; i++) {
                     let row = dataSet[key];
                     let attribute = data.getAttribute(i, row[i]);
 
-                    res[attribute.id] = attribute.value;
+                    observation[attribute.id] = attribute.value;
                 }
 
                 profile.transformation.forEach((transformation) => {
-                    dataValues = dataValues.concat(mapper.transformToDataValue(res, transformation));
+                    dataValues = dataValues.concat(mapper.transformToDataValue(observation, transformation));
                 });
             }
             console.log("Mapped", Object.keys(dataSet).length, "records into", dataValues.length, "data values");
