@@ -1,3 +1,7 @@
+/**
+ * Wrapper around an SDMX data payload which provides convenience methods
+ * for accessing elements such as dimensions and attributes.
+ */
 class SdmxWrapper {
 
     constructor(sdmx) {

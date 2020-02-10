@@ -1,5 +1,9 @@
 const request = require('request');
 
+/**
+ * Wrapper around a DHIS 2 API endpoint which provides convenience methods for 
+ * saving data values.
+ */
 class DHIS2Connector {
 
     constructor(url, username, password) {
@@ -23,6 +27,5 @@ class DHIS2Connector {
         }, cb);
     }
 }
-
 
 module.exports = DHIS2Connector;

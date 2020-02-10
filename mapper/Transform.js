@@ -1,9 +1,10 @@
 const vm = require('vm');
 
 /**
- * Takes en environment, consisting of variables representing data, and the mapping configuration
+ * Accepts an environment, consisting of variables representing data, and the mapping configuration
  * and maps the correct data to the correct properties based on the configuration.
- * @param env variables representing data from helix
+ * 
+ * @param env variables representing data from Helix
  * @param mapping configuration
  * @returns DataValues
  */
@@ -28,6 +29,7 @@ function transformToDataValue(env, mapping) {
 
 /**
  * Transforms an object into a string, based on the given expression.
+ * 
  * @param env an object containing the variables used in expressions.
  * @param expression executable javascript
  * @returns A String

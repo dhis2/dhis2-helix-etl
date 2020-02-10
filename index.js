@@ -3,6 +3,9 @@ const DHIS2Connector = require('./connector/Dhis2');
 const mapper = require('./mapper/Transform');
 const config = require('./config.json');
 
+/**
+ * Main service for the Helix DHIS 2 data pipeline.
+ */
 (function () {
 
     console.log("Configuration:");
@@ -53,6 +56,7 @@ const config = require('./config.json');
                 });
             }
             console.log("Mapped", Object.keys(dataSet).length, "records into", dataValues.length, "data values");
+            console.log(dataValues);
 
             dhiS2Connector.postDataValues({dataValues: dataValues}, function (err, res) {
                 if (err) {
