@@ -2,13 +2,13 @@
 
 ## Configuration
 
-First set up `configuration.json` with the required information, then run the script with Node:
+First set up `config.json` with the required information, then run the script with Node:
 
     node index.js
 
 This script will load data from Helix, transform it based on the profile mapping and push data to the DHIS2 instance defined in the configuration.
 
-The configuration file is in JSON format and looks like this:
+The `config.json` configuration file is in JSON format and looks like this:
 
 ```json
 {
