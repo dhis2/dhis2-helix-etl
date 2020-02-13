@@ -2,6 +2,7 @@ const HelixConnector = require('./connector/Helix');
 const DHIS2Connector = require('./connector/Dhis2');
 const mapper = require('./mapper/Transform');
 const config = require('./config.json');
+const fs = require('fs');
 
 /**
  * Main service for the Helix DHIS 2 data pipeline.
@@ -37,7 +38,7 @@ const config = require('./config.json');
             /*
             * Key refers to the SDMX observation key. This key contains multiple indexes split by ":".
             * The index position refers to the structure dimensions, and the index values refer to the
-            * position of the value within dimension. 
+            * position of the value within dimension.
             */
             for (let key in dataSet) {
 
@@ -51,8 +52,14 @@ const config = require('./config.json');
 
                 for (let i = 0; i < dataSet[key].length - 1; i++) {
                     let row = dataSet[key];
-                    let attribute = data.getAttribute(i, row[i]);
+                    let valIndex = row[i];
 
+                    if (valIndex == null) {
+                        continue;
+                    }
+
+                    let attribute = data.getAttribute(i, valIndex);
+                    
                     observation[attribute.id] = attribute.value;
                 }
 
@@ -61,6 +68,12 @@ const config = require('./config.json');
                 });
             }
             console.log("Mapped", Object.keys(dataSet).length, "records into", dataValues.length, "data values");
+
+            if (profile.writeToFile) {
+                fs.writeFile("dhis2-data-values.json", JSON.stringify(dataValues, null, 2), function() {
+                    console.log("Wrote file 'dhis2-data-values.json'");
+                });
+            }
 
             dhiS2Connector.postDataValues({dataValues: dataValues}, function (err, res) {
                 if (err) {

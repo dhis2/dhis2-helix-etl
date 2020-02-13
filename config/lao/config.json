@@ -2,13 +2,12 @@
   "dhis2": {
     "url": "https://giocare.dhis2.org/unicef-dev",
     "username": "lars",
-    "password": "Unicef2020!"
+    "password": "SingleMalt_78!"
   },
   "profiles": [
     {
       "name": "DHIS2 Sample data",
       "url": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF_TEST,DHIS_SAMPLE_DATASET_2,1.0/.._T._T?format=sdmx-json&includeHistory=true&includeMetadata=true&dimensionAtObservation=AllDimensions&includeAllAnnotations=true",
-      "writeToFile": true,
       "transformation": [
         {
           "dataElementId": "UNICEF_INDICATOR",

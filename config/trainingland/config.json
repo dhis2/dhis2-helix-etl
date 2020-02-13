@@ -1,14 +1,13 @@
 {
   "dhis2": {
-    "url": "https://giocare.dhis2.org/unicef-dev",
-    "username": "lars",
-    "password": "Unicef2020!"
+    "url": "https://verify.dhis2.org/unicef-dxp",
+    "username": "UNICEF_admin",
+    "password": "Hel1x2020!"
   },
   "profiles": [
     {
       "name": "DHIS2 Sample data",
-      "url": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF_TEST,DHIS_SAMPLE_DATASET_2,1.0/.._T._T?format=sdmx-json&includeHistory=true&includeMetadata=true&dimensionAtObservation=AllDimensions&includeAllAnnotations=true",
-      "writeToFile": true,
+      "url": "https://unicef.sdmxcloud.org/ws/public/sdmxapi/rest/data/UNICEF_TEST,DHIS_SAMPLE_DATASET,1.0/all?format=sdmx-json&includeHistory=true&includeMetadata=true&dimensionAtObservation=AllDimensions&includeAllAnnotations=true",
       "transformation": [
         {
           "dataElementId": "UNICEF_INDICATOR",
