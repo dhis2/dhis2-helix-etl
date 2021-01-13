@@ -1,5 +1,9 @@
 # DHIS 2 Helix DXP Data Pipeline
 
+## Requirements
+
+The data pipeline is written in Node.js and requires a Node.js runtime.
+
 ## Configuration
 
 First set up `config.json` with the required information, then run the script with Node:
