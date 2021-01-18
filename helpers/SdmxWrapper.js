@@ -9,7 +9,7 @@ class SdmxWrapper {
     }
 
     getDimension(dimensionIndex, valueIndex) {
-        let dimensions = this.sdmx.structure.dimensions.observation;
+        let dimensions = this.sdmx.data.structure.dimensions.observation;
 
         return {
             "id": dimensions[dimensionIndex].id,
@@ -18,7 +18,7 @@ class SdmxWrapper {
     }
 
     getAttribute(attributeIndex, valueIndex) {
-        let attributes = this.sdmx.structure.attributes.observation;
+        let attributes = this.sdmx.data.structure.attributes.observation;
 
         if (attributeIndex === 0)
             return {
@@ -33,7 +33,7 @@ class SdmxWrapper {
     }
 
     getDataSet() {
-        return this.sdmx.dataSets[0].observations;
+        return this.sdmx.data.dataSets[0].observations;
     }
 
 }
